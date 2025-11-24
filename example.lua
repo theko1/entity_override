@@ -13,5 +13,5 @@ local genrewrite = {
 	}
 }
 
-override:rewrite("dmobs:panda",genrewrite)
-override:rewrite("dmobs:fox",genrewrite)
+override.rewrite("dmobs:panda",genrewrite)
+override.rewrite("dmobs:fox",genrewrite)
