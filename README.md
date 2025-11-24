@@ -47,7 +47,7 @@ This modifies two mobs so that they react when right-clicked, but no more, as we
 
 The substition can also be done on a conditional basis per property, where a checking function is provided. Return the boolean `true` from the checking function to go ahead with the substitution; any other value (including the string `"true"`) will cause the original property's value to be left alone.
 
-	override:rewrite("dmobs:hedgehog",{
+	override.rewrite("dmobs:hedgehog",{
 		hp_max = {
 			check = function(oldval)
 				return oldval < 10
@@ -60,7 +60,7 @@ This assigns a new max HP to a mob only if its normal HP is less than 10, otherw
 
 Note that to assign tables, you need to write a conditional substitution - but you can leave out the checking function:
 
-	override:rewrite("mobs_slimes:slime_small",{
+	override.rewrite("mobs_slimes:slime_small",{
 		textures = {
 			tableorder = "append", -- or "prepend", this parameter is optional in case the order will be important
 			value = {"newtexture_front.png","newtexture_side.png"} -- the actual table that will be assigned
@@ -73,7 +73,7 @@ You can add a function before or after the function currently in place by provid
 
 In the case of a `"before"` type, where your custom function runs before the original, you must return either a boolean `true` or boolean `false`. True will allow the original function to run; false will cause the original function to be skipped.
 
-	override:rewrite("mobs_animal:sheep",{
+	override.rewrite("mobs_animal:sheep",{
 		on_rightclick = {
 			fchain_type = "before",
 			fchain_func = function (self,clicker)
