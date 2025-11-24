@@ -38,8 +38,8 @@ For example
 			hp_max = 40,
 			on_rightclick = function(self,clicker) minetest.chat_send_player(clicker:get_player_name(),"You cannot tame "..self.name) end, -- just substitute the function
 		}
-	override:rewrite("dmobs:ogre", newdef)
-	override:rewrite("dmobs:orc", newdef)
+	override.rewrite("dmobs:ogre", newdef)
+	override.rewrite("dmobs:orc", newdef)
 
 This modifies two mobs so that they react when right-clicked, but no more, as well as providing them with a new maximum HP.
 
